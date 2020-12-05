@@ -69,6 +69,6 @@ function resultsToFeed(results) {
     var source = fs.readFileSync('./feed.xml', 'utf8');
     var template = hbs.compile(source);
     results.icurl = "https://robertsspaceindustries.com/community/issue-council/star-citizen-alpha-3";
-    results.url = "http://localhost:8010/lunar-nuance-251922/us-central1/scIssueCouncilFeed";
+    results.url = process.env.url;
     return template(results);
 }
