@@ -9,8 +9,7 @@
   <item>
     <title>{{title}}</title>
     <link>{{../icurl}}/{{module.key}}-{{id}}-{{uri title}}</link>
-    <description><![CDATA[
-    <table cellspacing="0" cellpadding="5" style="border-collapse: collapse; border: 1px solid #CCC;">
+    <description><![CDATA[<table cellspacing="0" cellpadding="5" style="border-collapse: collapse; border: 1px solid #CCC;">
         <caption style="border-collapse:collapse; border: 1px solid #CCC; border-bottom-width: 0; padding: 5px;">{{ module.key }}-{{ id }}</caption>
         <thead>
             <tr style="border-collapse: collapse; border: 1px solid #CCC;">
@@ -33,6 +32,8 @@
     </table>
     ]]></description>
     <guid>{{../icurl}}/{{ module.key }}-{{ id }}-{{ uri title }}</guid>
+    <pubDate>{{pubDate time_modified}}</pubDate>
+    <category>{{label.url}}</category>
   </item>
   {{/each}}
 </channel>

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const axios = require('axios');
+const dateformat = require('dateformat');
 const hbs = require("handlebars");
 
 hbs.registerHelper('uri', function (aString) {
@@ -26,6 +27,12 @@ hbs.registerHelper('stat', function (s) {
         default:
             return 'Triage';
     }
+});
+
+hbs.registerHelper('pubDate', function(aDate) {
+    let tDate = aDate.replace(' ', 'T');
+    let d = Date.parse(tDate);
+    return dateformat(d, "ddd, dd mmm yyyy HH:mm:ss o");
 });
 
 /**
