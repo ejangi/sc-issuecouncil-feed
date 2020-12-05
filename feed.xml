@@ -3,8 +3,11 @@
 <channel>
   <title>Issue Council</title>
   <link>{{url}}</link>
-  <description></description>
   <atom:link href="{{url}}" rel="self" type="application/rss+xml" />
+  <description>Issue Council items marked as Fixed in the last month.</description>
+  <lastBuildDate>{{ buildDate }}</lastBuildDate>
+  <pubDate>{{ buildDate }}</pubDate>
+  <generator>Custom Google Cloud Function</generator>
   {{#each resultset}}
   <item>
     <title>{{title}}</title>
@@ -32,8 +35,10 @@
     </table>
     ]]></description>
     <guid>{{../icurl}}/{{ module.key }}-{{ id }}-{{ uri title }}</guid>
-    <pubDate>{{pubDate time_modified}}</pubDate>
+    <pubDate>{{pubDate time_created}}</pubDate>
+    <atom:updated>{{upDate time_modified}}</atom:updated>
     <category>{{label.url}}</category>
+    <author>{{reporter.account.nickname}}@robertsspaceindustries.com ({{reporter.account.nickname}})</author>
   </item>
   {{/each}}
 </channel>

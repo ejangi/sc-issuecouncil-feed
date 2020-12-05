@@ -35,6 +35,12 @@ hbs.registerHelper('pubDate', function(aDate) {
     return dateformat(d, "ddd, dd mmm yyyy HH:mm:ss o");
 });
 
+hbs.registerHelper('upDate', function(aDate) {
+    let tDate = aDate.replace(' ', 'T');
+    let d = Date.parse(tDate);
+    return dateformat(d, "yyyy-mm-dd'T'HH:mm:ss'Z'");
+});
+
 /**
  * HTTP Cloud Function.
  * This function is exported by index.js, and is executed when
@@ -77,5 +83,6 @@ function resultsToFeed(results) {
     var template = hbs.compile(source);
     results.icurl = "https://robertsspaceindustries.com/community/issue-council/star-citizen-alpha-3";
     results.url = process.env.url;
+    results.buildDate = dateformat(Date.now(), "ddd, dd mmm yyyy HH:mm:ss o")
     return template(results);
 }
