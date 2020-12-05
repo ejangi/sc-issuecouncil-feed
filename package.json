@@ -1,0 +1,23 @@
+{
+  "name": "sc-issuecouncil-feed",
+  "version": "1.0.0",
+  "description": "Converts the Issue Council searches to an RSS Feed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejangi/sc-issuecouncil-feed.git"
+  },
+  "author": "James Angus <james@ejangi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ejangi/sc-issuecouncil-feed/issues"
+  },
+  "homepage": "https://github.com/ejangi/sc-issuecouncil-feed#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "hbs": "^4.1.1"
+  }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Issue Council</title>
+  <link>{{url}}</link>
+  <description></description>
+  <atom:link href="{{url}}" rel="self" type="application/rss+xml" />
+  {{#each resultset}}
+  <item>
+    <title>{{title}}</title>
+    <link>{{../icurl}}/{{module.key}}-{{id}}-{{uri title}}</link>
+    <description><![CDATA[
+    <table cellspacing="0" cellpadding="5" style="border-collapse: collapse; border: 1px solid #CCC;">
+        <caption style="border-collapse:collapse; border: 1px solid #CCC; border-bottom-width: 0; padding: 5px;">{{ module.key }}-{{ id }}</caption>
+        <thead>
+            <tr style="border-collapse: collapse; border: 1px solid #CCC;">
+                <th align="right" style="background-color: #DDD; border-collapse: collapse; border: 1px solid #CCC;">Status</th>              
+                <th align="right" style="background-color: #DDD; border-collapse: collapse; border: 1px solid #CCC;">Reproductions</th>
+                <th align="right" style="background-color: #DDD; border-collapse: collapse; border: 1px solid #CCC;">Invalid</th>
+                <th align="right" style="background-color: #DDD; border-collapse: collapse; border: 1px solid #CCC;">Votes</th>
+                <th align="right" style="background-color: #DDD; border-collapse: collapse; border: 1px solid #CCC;">Last Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #EEE; border-collapse: collapse; border: 1px solid #CCC;">
+                <th align="right" style="border-collapse: collapse; border: 1px solid #CCC;">{{stat status}}</th>
+                <td align="right" style="border-collapse: collapse; border: 1px solid #CCC;">{{can_reproduce_count}}</td>
+                <td align="right" style="border-collapse: collapse; border: 1px solid #CCC;">{{invalid_count}}</td>
+                <td align="right" style="border-collapse: collapse; border: 1px solid #CCC;">{{vote_count}}</td>
+                <td align="right" style="border-collapse: collapse; border: 1px solid #CCC;">{{time_modified}}</td>
+            </tr>
+        </tbody>
+    </table>
+    ]]></description>
+    <guid>{{../icurl}}/{{ module.key }}-{{ id }}-{{ uri title }}</guid>
+  </item>
+  {{/each}}
+</channel>
+</rss> 
